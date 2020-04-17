@@ -1,7 +1,21 @@
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
-import 'listItems.dart';
+class Header extends StatefulWidget {
+  @override
+  _HeaderState createState() => _HeaderState();
+}
+
+
+class _HeaderState extends State<Header> {
+  String _date  = '';
+  TextEditingController _inputFieldDateController = new TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return getheader1(context);
+  }
 
 Widget getheader1(BuildContext context) {
   
@@ -12,9 +26,7 @@ Widget getheader1(BuildContext context) {
               child: Column(children: <Widget>[
                               _createTitle(),
                               _createSumary(),
-                              iconsRow(),
-
-
+                              iconsRow(context),
                 ])
           );
 
@@ -81,7 +93,39 @@ Widget summaryItem(String line1, String line2){
             );
 }
 
-Widget iconsRow(){
+
+
+
+
+  void _selectDate(BuildContext context) async {
+    
+    DateTime picked = await showDatePicker(
+      context: context,
+      initialDate: new DateTime.now(),
+      firstDate: new DateTime(2018),
+      lastDate: new DateTime(2025),
+    );
+
+    if ( picked != null ) {
+      setState(() {
+          var formatter = new DateFormat('LLL.dd.yy');
+          _date = formatter.format(picked);
+          _inputFieldDateController.text = _date;
+      }); 
+    }
+
+  }
+
+  void _createCalendar( BuildContext context ) {
+
+    FocusScope.of(context).requestFocus(new FocusNode());
+    _selectDate( context );
+  }
+
+
+
+
+Widget iconsRow(BuildContext context){
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
@@ -118,7 +162,7 @@ Widget iconsRow(){
             ),
             Row(children: <Widget>[
                 RawMaterialButton(
-                            onPressed: () {},
+                            onPressed: () { _createCalendar(context); },
                             child: new Text(
                                 '4 W', style: TextStyle(color: Colors.white) 
                                 ),
@@ -130,11 +174,14 @@ Widget iconsRow(){
                      Container(
                        child: Padding(
                          padding: const EdgeInsets.all(4.0),
-                         child: Row(
-                           children: <Widget>[
-                             Text('Aug.20.06', style: TextStyle(color: Colors.white )),
-                             Icon(Icons.calendar_today, color: Colors.white)
-                           ],
+                         child: InkWell(
+                                      onTap: (){ _createCalendar(context); },
+                                      child: Row(
+                                      children: <Widget>[
+                                        Text(_date, style: TextStyle(color: Colors.white )),
+                                        Icon(Icons.calendar_today, color: Colors.white)
+                                      ],
+                           ),
                          ),
                        ),
                        decoration: BoxDecoration(
@@ -151,4 +198,8 @@ Widget iconsRow(){
             ],)
         ],
   );
+
+  
+
+  }
 }

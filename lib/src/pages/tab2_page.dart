@@ -26,7 +26,7 @@ class _Tab2PageState extends State<Tab2Page> with AutomaticKeepAliveClientMixin 
                             
                                     height: _screenSize.height * 0.4,
                                     width:  _screenSize.width,
-                                    child: getheader1(context),
+                                    child: Header(),
                               
                                     ),
                         ),

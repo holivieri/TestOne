@@ -13,6 +13,9 @@ class Tab1Page extends StatefulWidget {
 
 class _Tab1PageState extends State<Tab1Page> with AutomaticKeepAliveClientMixin {
  
+
+  
+
   @override
   Widget build(BuildContext context) {
      final _screenSize = MediaQuery.of(context).size;
@@ -30,7 +33,7 @@ class _Tab1PageState extends State<Tab1Page> with AutomaticKeepAliveClientMixin 
                             
                                     height: _screenSize.height * 0.4,
                                     width:  _screenSize.width,
-                                    child: getheader1(context),
+                                    child: Header(),
                               
                                     ),
                         ),
@@ -65,7 +68,8 @@ class _Tab1PageState extends State<Tab1Page> with AutomaticKeepAliveClientMixin 
                         ),
             );
   }
-
+  
+  
  
 }
 
