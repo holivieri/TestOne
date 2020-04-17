@@ -6,25 +6,30 @@ Widget getListItems(){
     height: 400,
     width: 500,
     color: Colors.white,
-    child: Column(children: <Widget>[
-          _createListTile( 'Avg. Ticket size', 'Viewing Now', 6571.45, '453k', Colors.green),
-          _createListTile( 'Product Revenue', '', 2355.20, '2k', Colors.grey),
-          _createListTile( 'Avg. Invoice Value', '', 1850.11, '3k', Colors.red),
-          _createListTile( 'Product Revenue', '', 244.30, '400k', Colors.green),
-          _createListTile( 'Avg. Invoice Value', '', 3577.45, '950k', Colors.red),
+    child: SingleChildScrollView(
+          child: Column(children: <Widget>[
+            _createListTile( 'Avg. Ticket size', 'Viewing Now', 6571.45, '453k', Colors.green),
+            _createListTile( 'Product Revenue', '', 2355.20, '2k', Colors.grey),
+            _createListTile( 'Avg. Invoice Value', '', 1850.11, '3k', Colors.red),
+            _createListTile( 'Product Revenue', '', 244.30, '400k', Colors.green),
+            _createListTile( 'Avg. Invoice Value', '', 3577.45, '950k', Colors.red),
 
-    ],)
+      ],),
+    )
   );
 
 }
 
-ListTile _createListTile(String text1, String text2, double value1, String value2, Color c) {
+Card _createListTile(String text1, String text2, double value1, String value2, Color c) {
 
-  return ListTile(
-              title: (text2 != '' ? Text(text1, style: TextStyle(fontWeight: FontWeight.bold)) : Text(text1)),
-              subtitle: Text(text2),
-              trailing: _createtrail(value1, value2, c, text2 != ''),
-            );
+  return Card(
+      elevation: 5.0,
+      child: ListTile(
+                title: (text2 != '' ? Text(text1, style: TextStyle(fontWeight: FontWeight.bold)) : Text(text1)),
+                subtitle: Text(text2),
+                trailing: _createtrail(value1, value2, c, text2 != ''),
+              ),
+  );
 }
 
 Widget _createtrail(double value, String value2, Color c, bool bold){
