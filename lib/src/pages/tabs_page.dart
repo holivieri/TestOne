@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:noticiero/src/pages/tab1_page.dart';
 import 'package:noticiero/src/pages/tab2_page.dart';
+import 'package:noticiero/src/widgets/drawer.dart';
 import 'package:provider/provider.dart';
+
+GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
+
 
 class TabsPage extends StatelessWidget {
 
@@ -10,9 +14,11 @@ class TabsPage extends StatelessWidget {
     return ChangeNotifierProvider(
         create: (_) => new _NavigationModel(),
           child: Scaffold(
-        body: _Pages(),
-        bottomNavigationBar: _Navegacion(),
-      ),
+                    key: _drawerKey,
+                    body: _Pages(),
+                    bottomNavigationBar: _Navegacion(),
+                    drawer: getDrawer(context),
+                  ),
     );
   }
 }
@@ -66,9 +72,13 @@ class _NavigationModel with ChangeNotifier {
   int get paginaActual => _paginaActual;
 
   set paginaActual( int valor ) {
-    _paginaActual = valor;
-    _pageController.animateToPage(valor, duration: Duration(milliseconds: 250), curve: Curves.easeInOut);
-    notifyListeners();
+    if(valor == 2){
+      _drawerKey.currentState.openDrawer();
+    } else{
+      _paginaActual = valor;
+      _pageController.animateToPage(valor, duration: Duration(milliseconds: 250), curve: Curves.easeInOut);
+      notifyListeners();
+    }
   }
 
   PageController get pagecontroller => this._pageController;

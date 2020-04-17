@@ -1,16 +1,17 @@
 
 import 'package:flutter/material.dart';
-import 'package:noticiero/src/widgets/listItems.dart';
 
-Widget getheader1() {
+Widget getheader1(BuildContext context) {
   
   return Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
               color: Color(0xFF30A3DA),
               child: Column(children: <Widget>[
                               _createTitle(),
                               _createSumary(),
                               iconsRow(),
-                              getListItems(),
+                             // getListItems(),
 
                 ])
           );

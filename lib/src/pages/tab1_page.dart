@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:noticiero/src/widgets/header1.dart';
-import 'package:provider/provider.dart';
+
 
 class Tab1Page extends StatefulWidget {
   
@@ -19,7 +19,7 @@ class _Tab1PageState extends State<Tab1Page> with AutomaticKeepAliveClientMixin 
               child: Container(
                     height: _screenSize.height * 0.4,
                     width:  _screenSize.width,
-                    child: getheader1(),
+                    child: getheader1(context),
         ),
       )
     );
