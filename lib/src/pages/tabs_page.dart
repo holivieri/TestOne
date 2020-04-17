@@ -56,7 +56,7 @@ class _Pages extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             children: <Widget>[
                 Tab1Page(),
-                Tabs2Page(),
+                Tab2Page(),
             ],
             );
   }

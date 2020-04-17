@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:noticiero/src/providers/zenotiProvider.dart';
 import 'package:noticiero/src/widgets/header1.dart';
 import 'package:noticiero/src/widgets/listItems.dart';
+import 'package:provider/provider.dart';
 
 
 class Tab1Page extends StatefulWidget {
@@ -10,12 +12,13 @@ class Tab1Page extends StatefulWidget {
 }
 
 class _Tab1PageState extends State<Tab1Page> with AutomaticKeepAliveClientMixin {
- // AutomaticKeepAliceCLientMixin para mantener el estado (la posicion de donde estaba)
-
+ 
   @override
   Widget build(BuildContext context) {
      final _screenSize = MediaQuery.of(context).size;
-      return Scaffold(
+     final currentStatus = Provider.of<ZenotiProvider>(context);
+
+    return Scaffold(
       body: SafeArea(
               child: Stack(
                   overflow: Overflow.clip,
@@ -45,25 +48,6 @@ class _Tab1PageState extends State<Tab1Page> with AutomaticKeepAliveClientMixin 
                         ),
                 ],
                 )
-              
-              
-              
-    /*           Column(
-                      children: <Widget>[
-                        Container(
-                          
-                                  height: _screenSize.height * 0.4,
-                                  width:  _screenSize.width,
-                                  child: getheader1(context),
-                            
-                                  ),
-                        Container(
-                                  padding: EdgeInsets.only(left: 8.0, right: 8.0),
-                                  height: _screenSize.height * 0.45,
-                                  width:  _screenSize.width,
-                                   child: getListItems()),
-                      ],
-                    ), */
         ),
       );
   }
