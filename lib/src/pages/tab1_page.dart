@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:noticiero/src/widgets/header1.dart';
+import 'package:noticiero/src/widgets/listItems.dart';
 
 
 class Tab1Page extends StatefulWidget {
@@ -16,13 +17,55 @@ class _Tab1PageState extends State<Tab1Page> with AutomaticKeepAliveClientMixin 
      final _screenSize = MediaQuery.of(context).size;
       return Scaffold(
       body: SafeArea(
-              child: Container(
-                    height: _screenSize.height * 0.4,
-                    width:  _screenSize.width,
-                    child: getheader1(context),
+              child: Stack(
+                  overflow: Overflow.clip,
+                  children: <Widget>[
+                        Positioned(
+                              top: 0,
+                              right: 0,
+                              child: Container(
+                            
+                                    height: _screenSize.height * 0.4,
+                                    width:  _screenSize.width,
+                                    child: getheader1(context),
+                              
+                                    ),
+                        ),
+                        Positioned(
+                                top: 230,
+                                right: 0,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                      child: Container(
+                                      padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                                      height: _screenSize.height * 0.55,
+                                      width:  _screenSize.width,
+                                       child: getListItems()),
+                                ),
+                        ),
+                ],
+                )
+              
+              
+              
+    /*           Column(
+                      children: <Widget>[
+                        Container(
+                          
+                                  height: _screenSize.height * 0.4,
+                                  width:  _screenSize.width,
+                                  child: getheader1(context),
+                            
+                                  ),
+                        Container(
+                                  padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                                  height: _screenSize.height * 0.45,
+                                  width:  _screenSize.width,
+                                   child: getListItems()),
+                      ],
+                    ), */
         ),
-      )
-    );
+      );
   }
 
   @override
