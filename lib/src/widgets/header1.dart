@@ -50,11 +50,11 @@ Widget _createTitle(){
                   padding: const EdgeInsets.all(15.0),
                   child: Row(children: <Widget>[
                         summaryItem('REVENUE', '\$ 117,454'),
-                        Divider(color: Colors.white),
+                        Container(color: Colors.white, width: 1.0),
                         summaryItem('UTILIZATION', '67%'),
-                         Divider(color: Colors.white),
+                        Container(color: Colors.white, width: 1.0),
                         summaryItem('FEEDBACK', '4.7'),
-                        Divider(),
+                        Container(color: Colors.white, width: 1.0),
                         summaryItem('GUESTS', '718'),
                     ],
                   ),
@@ -68,8 +68,8 @@ Widget summaryItem(String line1, String line2){
    TextStyle mystyle = TextStyle(color: Colors.white);
 
   return Container(
-                height: 95,
-                width: 95,
+                height: 93,
+                width: 93,
                 color: Color (0xFF65B4DE),
                 child: Column(children: <Widget>[
                       SizedBox(height: 10.0),

@@ -13,7 +13,7 @@ Widget getListItems(){
             _createListTile( 'Avg. Invoice Value', '', 1850.11, '3k', Colors.red),
             _createListTile( 'Product Revenue', '', 244.30, '400k', Colors.green),
             _createListTile( 'Avg. Invoice Value', '', 3577.45, '950k', Colors.red),
-
+            _createListTile( 'Product revenue 2', '', 2000, '4k', Colors.green),
       ],),
     )
   );
