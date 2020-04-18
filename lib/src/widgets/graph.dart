@@ -4,7 +4,7 @@ import 'package:noticiero/src/models/sales.dart';
 
 class MyChart extends StatefulWidget {
 
-   final String title;
+  final String title;
 
   const MyChart(this.title);
 
@@ -20,7 +20,6 @@ class _MyChartState extends State<MyChart> {
 
   _MyChartState(String title){
       _title = title;
-     // _seriesLineData = _generateData();
   }
 
    _generateData() {
@@ -95,7 +94,7 @@ class _MyChartState extends State<MyChart> {
                 padding: EdgeInsets.all(8.0),
                 child: Container(
                   
-                  color: Colors.blue,
+                  color: Color(0xFF30A3DA), 
                   child: Center(
                     child: Column(
                       children: <Widget>[
@@ -107,7 +106,7 @@ class _MyChartState extends State<MyChart> {
                             defaultRenderer: new charts.LineRendererConfig(
                                 includeArea: true, stacked: true),
                             animate: true,
-                            animationDuration: Duration(seconds: 5),
+                            animationDuration: Duration(seconds: 3),
                             behaviors: [
                                   new charts.ChartTitle('Years',
                                       behaviorPosition: charts.BehaviorPosition.bottom,

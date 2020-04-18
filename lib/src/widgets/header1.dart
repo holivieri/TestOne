@@ -113,16 +113,28 @@ Widget summaryItem(String line1, String line2){
 
   Widget _showGraph(String date){
     
-    return  Container(
-              height: 400,//MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              color: Color(0xFF30A3DA),
-              child: MyChart(date)
-            );
+    return  Column(
+      children: <Widget>[
+            Center(
+                        child: FlatButton(
+                                  onPressed: () { _hideGraph(); },
+                                  child: Icon(Icons.arrow_drop_up, color: Colors.white),
+                                  shape: CircleBorder(),
+                                ),
+                      ), 
+            Container(
+                  height: 400,//MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  color: Color(0xFF30A3DA),
+                  child: MyChart(date),
+                ),
+      ],
+    );
   }
 
     Widget _hideGraph(){
-    
+    _graph = null;
+    Provider.of<ZenotiProvider>(context, listen: false).top = 230;  
     return  Container(
               height: 0,
               width: 0,
