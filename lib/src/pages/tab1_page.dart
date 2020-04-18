@@ -5,6 +5,7 @@ import 'package:noticiero/src/widgets/listItems.dart';
 import 'package:provider/provider.dart';
 
 
+
 class Tab1Page extends StatefulWidget {
   
   @override
@@ -12,10 +13,8 @@ class Tab1Page extends StatefulWidget {
 }
 
 class _Tab1PageState extends State<Tab1Page> with AutomaticKeepAliveClientMixin {
- 
 
   
-
   @override
   Widget build(BuildContext context) {
      final _screenSize = MediaQuery.of(context).size;
@@ -31,14 +30,14 @@ class _Tab1PageState extends State<Tab1Page> with AutomaticKeepAliveClientMixin 
                               right: 0,
                               child: Container(
                             
-                                    height: _screenSize.height * 0.4,
+                                    height: (currentStatus.panelsize != 0 ? currentStatus.panelsize : _screenSize.height * 0.4),
                                     width:  _screenSize.width,
                                     child: Header(),
                               
                                     ),
                         ),
                         Positioned(
-                                top: 230,
+                                top: currentStatus.top,
                                 right: 0,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(15.0),
@@ -58,45 +57,9 @@ class _Tab1PageState extends State<Tab1Page> with AutomaticKeepAliveClientMixin 
   @override
   bool get wantKeepAlive => true;
 
-  Widget _createBackground(){
-    return Container(
-              height: double.infinity,
-              width: double.infinity,
-             // color: Color(0xff615AAB),
-              child: CustomPaint(
-                                painter: _HeaderWavePainter(),
-                        ),
-            );
-  }
-  
+
   
  
 }
 
-class _HeaderWavePainter extends CustomPainter{
-  
-  @override
-  void paint(Canvas canvas, Size size) {
-    
-    final lapiz = new Paint();
-    lapiz.color = Colors.lightBlue; //Color(0xff615AAB);
-    lapiz.style = PaintingStyle.fill; //bordes
-    lapiz.strokeWidth = 20.0;
-    lapiz.strokeWidth = 5.0;
-
-    final path = new Path();
-    path.lineTo(0, size.height * 0.25);
-    path.lineTo(size.width, size.height * 0.25);
-    path.lineTo(size.width, 0);
-    canvas.drawPath(path, lapiz);
-    
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    
-    return true;
-  }
-
-}
 

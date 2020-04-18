@@ -1,6 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:noticiero/src/providers/zenotiProvider.dart';
+import 'package:noticiero/src/widgets/graph.dart';
+import 'package:provider/provider.dart';
+
 
 class Header extends StatefulWidget {
   @override
@@ -11,6 +14,18 @@ class Header extends StatefulWidget {
 class _HeaderState extends State<Header> {
   String _date  = '';
   TextEditingController _inputFieldDateController = new TextEditingController();
+  Widget _graph;
+   
+
+  @override
+  void initState() {
+    // implement initState
+    super.initState();
+      
+  }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +34,15 @@ class _HeaderState extends State<Header> {
 
 Widget getheader1(BuildContext context) {
   
+  
   return Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              color: Color(0xFF30A3DA),
+              color: Colors.blue, // Color(0xFF30A3DA),
               child: Column(children: <Widget>[
                               _createTitle(),
                               _createSumary(),
+                              (_graph != null ? _showGraph(_date) : _hideGraph()),
                               iconsRow(context),
                 ])
           );
@@ -34,7 +51,7 @@ Widget getheader1(BuildContext context) {
 
 Widget _createTitle(){
   return Container(
-              color: Color(0xFF30A3DA),
+              color: Colors.blue, // Color(0xFF30A3DA),
               child: Column(children: <Widget>[
                   Text('Your business name', style: TextStyle(fontSize: 20.0, color: Colors.white), textAlign: TextAlign.center),
                   Text('Updated 1hr ago', style: TextStyle(fontSize: 10.0, color: Colors.white), textAlign: TextAlign.center)
@@ -82,7 +99,7 @@ Widget summaryItem(String line1, String line2){
   return Container(
                 height: 93,
                 width: 93,
-                color: Color (0xFF65B4DE),
+                color: Colors.blue, // Color (0xFF65B4DE),
                 child: Column(children: <Widget>[
                       SizedBox(height: 10.0),
                       Text(line1, style: mystyle),
@@ -94,11 +111,27 @@ Widget summaryItem(String line1, String line2){
 }
 
 
+  Widget _showGraph(String date){
+    
+    return  Container(
+              height: 400,//MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blue, //Color(0xFF30A3DA),
+              child: MyChart(date)
+            );
+  }
 
+    Widget _hideGraph(){
+    
+    return  Container(
+              height: 0,
+              width: 0,
+              color: Colors.blue, // Color(0xFF30A3DA),
+            );
+  }
 
 
   void _selectDate(BuildContext context) async {
-    
     DateTime picked = await showDatePicker(
       context: context,
       initialDate: new DateTime.now(),
@@ -111,6 +144,11 @@ Widget summaryItem(String line1, String line2){
           var formatter = new DateFormat('LLL.dd.yy');
           _date = formatter.format(picked);
           _inputFieldDateController.text = _date;
+           Provider.of<ZenotiProvider>(context, listen: false).top = 500;
+           Provider.of<ZenotiProvider>(context, listen: false).selectedDate = picked;
+           Provider.of<ZenotiProvider>(context, listen: false).panelsize = 650;
+           
+          _graph = MyChart(_date);
       }); 
     }
 
@@ -190,12 +228,12 @@ Widget iconsRow(BuildContext context){
                                       color: Colors.white
                                     ),
                                     borderRadius: BorderRadius.all(
-                                        Radius.circular(15.0) //         <--- border radius here
+                                        Radius.circular(15.0) 
                                     ),
                                   )
                      )
 
-            ],)
+            ])
         ],
   );
 
