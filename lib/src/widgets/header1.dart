@@ -38,7 +38,7 @@ Widget getheader1(BuildContext context) {
   return Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              color: Colors.blue, // Color(0xFF30A3DA),
+              color: Color(0xFF30A3DA),
               child: Column(children: <Widget>[
                               _createTitle(),
                               _createSumary(),
@@ -51,7 +51,7 @@ Widget getheader1(BuildContext context) {
 
 Widget _createTitle(){
   return Container(
-              color: Colors.blue, // Color(0xFF30A3DA),
+              color: Color(0xFF30A3DA),
               child: Column(children: <Widget>[
                   Text('Your business name', style: TextStyle(fontSize: 20.0, color: Colors.white), textAlign: TextAlign.center),
                   Text('Updated 1hr ago', style: TextStyle(fontSize: 10.0, color: Colors.white), textAlign: TextAlign.center)
@@ -99,7 +99,7 @@ Widget summaryItem(String line1, String line2){
   return Container(
                 height: 93,
                 width: 93,
-                color: Colors.blue, // Color (0xFF65B4DE),
+                color: Color (0xFF65B4DE),
                 child: Column(children: <Widget>[
                       SizedBox(height: 10.0),
                       Text(line1, style: mystyle),
@@ -116,7 +116,7 @@ Widget summaryItem(String line1, String line2){
     return  Container(
               height: 400,//MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              color: Colors.blue, //Color(0xFF30A3DA),
+              color: Color(0xFF30A3DA),
               child: MyChart(date)
             );
   }
@@ -126,7 +126,7 @@ Widget summaryItem(String line1, String line2){
     return  Container(
               height: 0,
               width: 0,
-              color: Colors.blue, // Color(0xFF30A3DA),
+              color: Color(0xFF30A3DA),
             );
   }
 
