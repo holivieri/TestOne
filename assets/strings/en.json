@@ -1,0 +1,69 @@
+{
+    "app_name":"Zenoti - Enabl App",
+    "organization_name": "Spa Bliss",
+    "lastupd_timestamp_ticker":"Updated 5 mins ago",
+
+    "app_menu_dashboard":"Dashboard",
+    "app_menu_employees":"Employees",
+    "app_menu_centers":"Centers",
+    "app_menu_collaborate":"Collaborate",
+    "app_menu_menu":"Menu",
+
+    "app_login_signin": "Sign In",
+    "app_login_account": "<Your Account>.zenoti.com",
+    "app_login_username": "Username",
+    "app_login_password": "Password",
+    "app_login_forgotpassword": "Forgot password",
+    "app_login_domain":".zenoti.com",
+    "app_login_error": "We did not find your account.Please try again",
+    "app_login_account_error":"Account is required.",
+    "app_login_username_error":"Username is required.",
+    "app_login_password_error":"Password is required.",
+
+    "app_button_text_btnnext":"Next",
+    "app_button_text_btnlogin":"Log In",
+    "app_button_text_btnsave":"Save",
+
+    "app_welcome_effortess":"Effortless Metric Tracking",
+    "app_welcome_effortess_desc":"Stay on top of the most imprortant business metric 24/7.",
+    
+    "app_welcome_compare":"Compare",
+    "app_welcome_compare_desc":"Keep track of your top performing locations and employees.",
+
+    "app_welcome_recognize":"Recognize",
+    "app_welcome_recognize_desc":"Create a culture of recognition by providing feedback to the team.",
+
+    "app_forgotpassword_next":"Next page",
+    "app_forgotpassword_sendcode":"Send Code",
+    "app_forgotpassword_sendcode_validation":"Sorry, your username could not be found. Please contact your admin.",
+
+    "app_forgotpassword_verifycode_code":"Code",
+    "app_forgotpassword_verifycode_code_error":"Incorrect Code! Please Try Again or Tap on Re-send",
+    "app_forgotpassword_verifycode_code_required":"Code is required.",
+    "app_forgotpassword_verifycode_code_screentext1":"A one-time temporary password has been sent\nto the email associated with this account.\nPlease type it above.\n\nIf you didn't receive it, please tap on re-send.",
+    "app_forgotpassword_verifycode_resendcode":"Re-Send Code",
+    "app_forgotpassword_verifycode_resendcode_success":"Resent code to registered email or mobile number.",
+    "app_forgotpassword_verifycode_submit":"Submit",
+    "app_forgotpassword_verifycode_title":"Confirmation Code",
+    
+    "app_forgotpassword_resetpassword_title":"Set Password",
+    "app_forgotpassword_resetpassword_newpassword":"New Password",
+    "app_forgotpassword_resetpassword_retypepassword":"Retype Password",
+    "app_forgotpassword_resetpassword_rule1":"* Have one special charcter '~!@#%^&*'",
+    "app_forgotpassword_resetpassword_rule2":"* Be at least 8-characters long",
+    "app_forgotpassword_resetpassword_rule3":"* Include at least one number.",
+    "app_forgotpassword_resetpassword_rule4":"* Have upper and lower characters",
+    "app_forgotpassword_resetpassword_screentext1":"Your Password must follow any 3 out of 4 rules:",
+    "app_forgotpassword_resetpassword_newpassword_username_error":"Password is weak.",
+    "app_forgotpassword_resetpassword_newpassword_username_error2":"Passwords do not match.",
+
+    "app_forgotpassword_resetpassword_success_title":"Success!",
+    "app_forgotpassword_resetpassword_success_desc":"Your new password has been set.",
+
+    "app_termsconditions_title":"Terms and Conditions",
+    "app_termsconditions_accept":"Accept",
+
+    "app_text_empty":""
+
+
+}

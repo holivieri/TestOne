@@ -1,0 +1,17 @@
+{
+    "app_name":"Zenoti - Enabl App",
+    "organization_name": "Spa Bliss",
+    "lastupd_timestamp_ticker":"Updated 5 mins ago",
+
+    "app_menu_dashboard":"Dashboard",
+    "app_menu_employees":"Employees",
+    "app_menu_centers":"Centers",
+    "app_menu_collaborate":"Collaborate",
+    "app_menu_menu":"Menu",
+
+    "app_login_signin": "Sign In",
+    "app_login_account": "Account",
+    "app_login_username": "Username",
+    "app_login_password": "Password"
+}
+
