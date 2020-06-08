@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import 'dart:io';
 import 'package:enablApp/src/storage/user_preferences.dart';
@@ -23,10 +22,9 @@ class UserManagementService {
 
     Map<String, String> authData = {
       'grant_type' : 'password',
-      'clientid'   : 'demo',
+      'clientid'   : account,
       'username'   : userName,
       'password'   : password,
-      //'account' : account,
       //'Platform'   : platform,
       //'DeviceId'   : _prefs.deviceId
     };

@@ -9,29 +9,24 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:provider/provider.dart';
 
 import 'src/providers/zenotiProvider.dart';
- 
-void main() async {
 
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = new UserPreferences();
-    await prefs.initPrefs();
-  
+  await prefs.initPrefs();
+
   final storage = new FlutterSecureStorage();
 
-  //clean up and create again,
-  //this solves the exception if Android did a backup to Drive and reset
-    
   try {
+    //clean up and create again,
+    //this solves the exception if Android did a backup to Drive and reset
     await storage.delete(key: 'url');
     await storage.write(key: 'url', value: 'https://api.zenoti.com');
-  }catch(e){
-    
-  }
+  } catch (e) {}
   runApp(MyApp());
 }
 
- //final currentStatus = Provider.of<ZenotiProvider>(context);
-  
+//final currentStatus = Provider.of<ZenotiProvider>(context);
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -43,32 +38,30 @@ class _MyAppState extends State<MyApp> {
     final prefs = new UserPreferences();
 
     return BlocProvider(
-          child: ChangeNotifierProvider<ZenotiProvider>(
-          create: (context) => ZenotiProvider(),
-          child: MaterialApp(
-                title: 'Zenoti',
-                // theme: myTheme,
-                debugShowCheckedModeBanner: false,
-                supportedLocales: [
-                    Locale('en', 'US'),
-                    // Locale('de', 'DE'),
-                  ],
-                localizationsDelegates: [
-                              const AppTranslationsDelegate(),
-                              GlobalMaterialLocalizations.delegate,
-                              GlobalWidgetsLocalizations.delegate,
-                            ],
-               // initialRoute: (prefs.token == '' || prefs.accountName == '' ? 'login' : 'home' ), 
-                initialRoute: 'login',
-                routes: getApplicationRoutes(),
-                onGenerateRoute: ( RouteSettings settings ){
-
-                  return MaterialPageRoute(
-                    builder: ( BuildContext context ) => HomePage()
-                  );
-                }
-                //home: HomePage()
-          ),
+      child: ChangeNotifierProvider<ZenotiProvider>(
+        create: (context) => ZenotiProvider(),
+        child: MaterialApp(
+            title: 'Zenoti',
+            // theme: myTheme,
+            debugShowCheckedModeBanner: false,
+            supportedLocales: [
+              Locale('en', 'US'),
+              // Locale('de', 'DE'),
+            ],
+            localizationsDelegates: [
+              const AppTranslationsDelegate(),
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            // initialRoute: (prefs.token == '' || prefs.accountName == '' ? 'login' : 'home' ),
+            initialRoute: 'login',
+            routes: getApplicationRoutes(),
+            onGenerateRoute: (RouteSettings settings) {
+              return MaterialPageRoute(
+                  builder: (BuildContext context) => HomePage());
+            }
+            //home: HomePage()
+            ),
       ),
     );
   }
