@@ -10,12 +10,12 @@ class LabelText extends StatelessWidget {
   final FontWeight bold;
 
   LabelText(
-      {this.text,
-      this.color,
-      this.fontSize,
-      this.isUpperCase,
-      this.maxFontSize,
-      this.bold});
+      {required this.text,
+      required this.color,
+      required this.fontSize,
+      required this.isUpperCase,
+      required this.maxFontSize,
+      required this.bold});
 
   @override
   Widget build(BuildContext context) {

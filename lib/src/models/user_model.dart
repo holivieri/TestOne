@@ -5,59 +5,59 @@ UserModel userFromJson(String str) => UserModel.fromJson(json.decode(str));
 String userToJson(UserModel data) => json.encode(data.toJson());
 
 class UserModel {
-    UserModel({
-        this.accessToken,
-        this.tokenType,
-        this.expiresIn,
-        this.refreshToken,
-        this.userName,
-        this.isAuthenticated,
-        this.accountName,
-        this.organizationId,
-        this.centerId,
-        this.zoneId,
-        this.userId,
-        this.timeZoneId,
-        this.hasZenotiCreds,
-        this.socialFaceBookUserId,
-        this.socialGoogleUserId,
-        this.cultureId,
-        this.currencyId,
-        this.centerName,
-        this.roleName,
-        this.appId,
-        this.loginUserType,
-        this.refresh,
-        this.issued,
-        this.expires,
-    });
+  UserModel({
+    this.accessToken,
+    this.tokenType,
+    this.expiresIn,
+    this.refreshToken,
+    this.userName,
+    this.isAuthenticated,
+    this.accountName,
+    this.organizationId,
+    this.centerId,
+    this.zoneId,
+    this.userId,
+    this.timeZoneId,
+    this.hasZenotiCreds,
+    this.socialFaceBookUserId,
+    this.socialGoogleUserId,
+    this.cultureId,
+    this.currencyId,
+    this.centerName,
+    this.roleName,
+    this.appId,
+    this.loginUserType,
+    this.refresh,
+    this.issued,
+    this.expires,
+  });
 
-    String accessToken;
-    String tokenType;
-    int expiresIn;
-    String refreshToken;
-    String userName;
-    String isAuthenticated;
-    String accountName;
-    String organizationId;
-    String centerId;
-    String zoneId;
-    String userId;
-    String timeZoneId;
-    String hasZenotiCreds;
-    String socialFaceBookUserId;
-    String socialGoogleUserId;
-    String cultureId;
-    String currencyId;
-    String centerName;
-    String roleName;
-    String appId;
-    String loginUserType;
-    String refresh;
-    String issued;
-    String expires;
+  String? accessToken;
+  String? tokenType;
+  int? expiresIn;
+  String? refreshToken;
+  String? userName;
+  String? isAuthenticated;
+  String? accountName;
+  String? organizationId;
+  String? centerId;
+  String? zoneId;
+  String? userId;
+  String? timeZoneId;
+  String? hasZenotiCreds;
+  String? socialFaceBookUserId;
+  String? socialGoogleUserId;
+  String? cultureId;
+  String? currencyId;
+  String? centerName;
+  String? roleName;
+  String? appId;
+  String? loginUserType;
+  String? refresh;
+  String? issued;
+  String? expires;
 
-    factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
+  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         accessToken: json["access_token"],
         tokenType: json["token_type"],
         expiresIn: json["expires_in"],
@@ -82,9 +82,9 @@ class UserModel {
         refresh: json[".refresh"],
         issued: json[".issued"],
         expires: json[".expires"],
-    );
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "access_token": accessToken,
         "token_type": tokenType,
         "expires_in": expiresIn,
@@ -109,5 +109,5 @@ class UserModel {
         ".refresh": refresh,
         ".issued": issued,
         ".expires": expires,
-    };
+      };
 }

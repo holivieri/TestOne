@@ -19,7 +19,7 @@ const menuItems = <Map<String, dynamic>>[
 ];
 
 class DashboardScreen extends StatefulWidget {
-  final String title;
+  final String? title;
 
   DashboardScreen({Key key, this.title}) : super(key: key);
 
@@ -30,7 +30,7 @@ class DashboardScreen extends StatefulWidget {
 class _MainScreenState extends State<DashboardScreen> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 //  EnablMetric selectedMetric;
-  DateTime activeDate;
+  DateTime? activeDate;
 
   @override
   void initState() {
@@ -72,7 +72,7 @@ class _MainScreenState extends State<DashboardScreen> {
                 ),
               ],
             ),
-           /*  bottom: PreferredSize(
+            /*  bottom: PreferredSize(
               preferredSize: Size(0.0, 90.0),
               child: Padding(
                 padding: EdgeInsets.all(spacer),
@@ -113,10 +113,10 @@ class _MainScreenState extends State<DashboardScreen> {
             selectedItemColor: themeBlue,
             onTap: (index) {
               log('Index: $index');
-              if (_scaffoldKey.currentState.isDrawerOpen) {
-                _scaffoldKey.currentState.openEndDrawer();
+              if (_scaffoldKey.currentState!.isDrawerOpen) {
+                _scaffoldKey.currentState!.openEndDrawer();
               } else {
-                _scaffoldKey.currentState.openDrawer();
+                _scaffoldKey.currentState!.openDrawer();
               }
             },
             items: menuItems
