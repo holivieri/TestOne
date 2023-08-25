@@ -1,10 +1,10 @@
-import 'package:enablApp/src/bloc/bloc_provider.dart';
-import 'package:enablApp/src/bloc/login_bloc.dart';
-import 'package:enablApp/src/services/userManagement_service.dart';
-import 'package:enablApp/src/widgets/labeltext.dart';
-import 'package:enablApp/src/widgets/raisedgradient_button.dart';
+import 'package:enablapp/src/bloc/bloc_provider.dart';
+import 'package:enablapp/src/bloc/login_bloc.dart';
+import 'package:enablapp/src/services/userManagement_service.dart';
+import 'package:enablapp/src/widgets/labeltext.dart';
+import 'package:enablapp/src/widgets/raisedgradient_button.dart';
 import 'package:flutter/material.dart';
-import 'package:enablApp/src/theme/constants.dart' as util;
+import 'package:enablapp/src/theme/constants.dart' as util;
 
 class LoginPage extends StatefulWidget {
   @override
@@ -82,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
             decoration: InputDecoration(
                 icon: Icon(Icons.person_outline, color: Colors.blue),
                 labelText: 'Account',
-                errorText: snapshot.error),
+                errorText: snapshot.error.toString()),
             onChanged: bloc.changeAccount,
           ),
         );
@@ -101,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
             decoration: InputDecoration(
                 icon: Icon(Icons.person_outline, color: Colors.blue),
                 labelText: 'Name',
-                errorText: snapshot.error),
+                errorText: snapshot.error.toString()),
             onChanged: bloc.changeUserName,
           ),
         );
@@ -120,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
             decoration: InputDecoration(
                 icon: Icon(Icons.lock_outline, color: Colors.blue),
                 labelText: 'Password',
-                errorText: snapshot.error),
+                errorText: snapshot.error.toString()),
             onChanged: bloc.changePassword,
           ),
         );
@@ -133,19 +133,20 @@ class _LoginPageState extends State<LoginPage> {
       stream: bloc.formValidStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return RaisedGradientButton(
-            width: MediaQuery.of(context).size.width / 2,
-            height: 10.0,
-            child: LabelText(
-              text: 'app_login_signin',
-              color: util.themeWhite,
-              fontSize: util.kButtonTextFontSize,
-              isUpperCase: false,
-              maxFontSize: util.kMaxButtonTextFontSize,
-            ),
-            gradient: LinearGradient(
-              colors: [util.gradientColor1, util.gradientColor2],
-            ),
-            onPressed: snapshot.hasData ? () => _login(bloc, context) : null);
+          width: MediaQuery.of(context).size.width / 2,
+          height: 10.0,
+          child: LabelText(
+            text: 'app_login_signin',
+            color: util.themeWhite,
+            bold: FontWeight.normal,
+            fontSize: util.kButtonTextFontSize,
+            isUpperCase: false,
+            maxFontSize: util.kMaxButtonTextFontSize,
+          ),
+          gradient: LinearGradient(
+            colors: [util.gradientColor1, util.gradientColor2],
+          ),
+        );
       },
     );
   }

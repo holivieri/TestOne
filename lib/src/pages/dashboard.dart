@@ -1,6 +1,6 @@
 import 'dart:developer';
-import 'package:enablApp/src/localization/app_translation.dart';
-import 'package:enablApp/src/theme/constants.dart';
+import 'package:enablapp/src/localization/app_translation.dart';
+import 'package:enablapp/src/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 const menuItems = <Map<String, dynamic>>[
@@ -19,9 +19,9 @@ const menuItems = <Map<String, dynamic>>[
 ];
 
 class DashboardScreen extends StatefulWidget {
-  final String title;
+  final String? title;
 
-  DashboardScreen({Key key, this.title}) : super(key: key);
+  DashboardScreen({Key? key, this.title}) : super(key: key);
 
   @override
   _MainScreenState createState() => _MainScreenState();
@@ -30,7 +30,7 @@ class DashboardScreen extends StatefulWidget {
 class _MainScreenState extends State<DashboardScreen> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 //  EnablMetric selectedMetric;
-  DateTime activeDate;
+  DateTime? activeDate;
 
   @override
   void initState() {
@@ -72,7 +72,7 @@ class _MainScreenState extends State<DashboardScreen> {
                 ),
               ],
             ),
-           /*  bottom: PreferredSize(
+            /*  bottom: PreferredSize(
               preferredSize: Size(0.0, 90.0),
               child: Padding(
                 padding: EdgeInsets.all(spacer),
@@ -113,23 +113,19 @@ class _MainScreenState extends State<DashboardScreen> {
             selectedItemColor: themeBlue,
             onTap: (index) {
               log('Index: $index');
-              if (_scaffoldKey.currentState.isDrawerOpen) {
-                _scaffoldKey.currentState.openEndDrawer();
+              if (_scaffoldKey.currentState!.isDrawerOpen) {
+                _scaffoldKey.currentState!.openEndDrawer();
               } else {
-                _scaffoldKey.currentState.openDrawer();
+                _scaffoldKey.currentState!.openDrawer();
               }
             },
             items: menuItems
                 .map(
                   (item) => BottomNavigationBarItem(
-                    icon: Icon(
-                      item['icon'],
-                    ),
-                    title: Text(
-                      AppTranslations.of(context)
-                          .text('app_menu_' + item['title']),
-                    ),
-                  ),
+                      icon: Icon(
+                        item['icon'],
+                      ),
+                      label: 'app_menu_' + item['title']),
                 )
                 .toList(),
           ),

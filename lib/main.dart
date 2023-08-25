@@ -1,8 +1,8 @@
-import 'package:enablApp/src/bloc/bloc_provider.dart';
-import 'package:enablApp/src/localization/app_translation_delegate.dart';
-import 'package:enablApp/src/pages/home_page.dart';
-import 'package:enablApp/src/routes/routes.dart';
-import 'package:enablApp/src/storage/user_preferences.dart';
+import 'package:enablapp/src/bloc/bloc_provider.dart';
+import 'package:enablapp/src/localization/app_translation_delegate.dart';
+import 'package:enablapp/src/pages/home_page.dart';
+import 'package:enablapp/src/routes/routes.dart';
+import 'package:enablapp/src/storage/user_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -35,8 +35,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    final prefs = new UserPreferences();
-
     return BlocProvider(
       child: ChangeNotifierProvider<ZenotiProvider>(
         create: (context) => ZenotiProvider(),

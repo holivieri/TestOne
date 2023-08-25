@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 enum MenuItemType { SECURITY, CONFIG, COMMUNICATION }
 
 class MenuModel {
-  IconData icon;
-  String title;
-  String route;
+  IconData? icon;
+  String? title;
+  String? route;
   bool isRoot;
   MenuItemType type;
 

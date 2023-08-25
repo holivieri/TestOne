@@ -1,13 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 class AppTranslations {
-  Locale locale;
-  static Map<dynamic, dynamic> _localisedValues;
+  Locale? locale;
+  static Map<dynamic, dynamic>? _localisedValues;
 
   AppTranslations(Locale locale) {
     this.locale = locale;
@@ -15,7 +14,7 @@ class AppTranslations {
   }
 
   static AppTranslations of(BuildContext context) {
-    return Localizations.of<AppTranslations>(context, AppTranslations);
+    return Localizations.of<AppTranslations>(context, AppTranslations)!;
   }
 
   static Future<AppTranslations> load(Locale locale) async {
@@ -26,9 +25,9 @@ class AppTranslations {
     return appTranslations;
   }
 
-  get currentLanguage => locale.languageCode;
+  get currentLanguage => locale?.languageCode;
 
   String text(String key) {
-    return _localisedValues[key] ?? "$key not found";
+    return _localisedValues?[key] ?? "$key not found";
   }
 }

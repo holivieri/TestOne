@@ -1,4 +1,4 @@
-import 'package:enablApp/src/localization/app_translation.dart';
+import 'package:enablapp/src/localization/app_translation.dart';
 import 'package:flutter/material.dart';
 
 class LabelText extends StatelessWidget {
@@ -10,12 +10,12 @@ class LabelText extends StatelessWidget {
   final FontWeight bold;
 
   LabelText(
-      {this.text,
-      this.color,
-      this.fontSize,
-      this.isUpperCase,
-      this.maxFontSize,
-      this.bold});
+      {required this.text,
+      required this.color,
+      required this.fontSize,
+      required this.isUpperCase,
+      required this.maxFontSize,
+      required this.bold});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class LabelText extends StatelessWidget {
           : AppTranslations.of(context).text(text),
       style: TextStyle(
         color: color,
-        fontWeight: (this.bold == null) ? FontWeight.normal : this.bold,
+        fontWeight: this.bold,
         fontSize: this.fontSize,
       ),
     )));

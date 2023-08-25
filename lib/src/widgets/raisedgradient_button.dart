@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 class RaisedGradientButton extends StatelessWidget {
   final Widget child;
-  final Gradient gradient;
+  final Gradient? gradient;
   final double width;
   final double height;
-  final Function onPressed;
+  final Function? onPressed;
 
   const RaisedGradientButton({
-    Key key,
-    @required this.child,
+    required this.child,
+    this.onPressed,
+    Key? key,
     this.gradient,
     this.width = double.infinity,
-    this.height = 50.0,
-    this.onPressed,
+    this.height = 50,
   }) : super(key: key);
 
   @override
@@ -23,7 +23,7 @@ class RaisedGradientButton extends StatelessWidget {
       height: 50.0,
       decoration: BoxDecoration(gradient: gradient, boxShadow: [
         BoxShadow(
-          color: Colors.grey[500],
+          color: Colors.grey,
           offset: Offset(0.0, 1.5),
           blurRadius: 1.5,
         ),
@@ -31,7 +31,7 @@ class RaisedGradientButton extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-            onTap: onPressed,
+            onTap: onPressed!(),
             child: Center(
               child: child,
             )),
