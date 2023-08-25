@@ -5,11 +5,11 @@ class RaisedGradientButton extends StatelessWidget {
   final Gradient? gradient;
   final double width;
   final double height;
-  final Function onPressed;
+  final Function? onPressed;
 
   const RaisedGradientButton({
     required this.child,
-    required this.onPressed,
+    this.onPressed,
     Key? key,
     this.gradient,
     this.width = double.infinity,
@@ -31,7 +31,7 @@ class RaisedGradientButton extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-            onTap: onPressed(),
+            onTap: onPressed!(),
             child: Center(
               child: child,
             )),

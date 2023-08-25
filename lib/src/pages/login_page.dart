@@ -133,20 +133,20 @@ class _LoginPageState extends State<LoginPage> {
       stream: bloc.formValidStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return RaisedGradientButton(
-            width: MediaQuery.of(context).size.width / 2,
-            height: 10.0,
-            child: LabelText(
-              text: 'app_login_signin',
-              color: util.themeWhite,
-              bold: FontWeight.normal,
-              fontSize: util.kButtonTextFontSize,
-              isUpperCase: false,
-              maxFontSize: util.kMaxButtonTextFontSize,
-            ),
-            gradient: LinearGradient(
-              colors: [util.gradientColor1, util.gradientColor2],
-            ),
-            onPressed: snapshot.hasData ? () => _login(bloc, context) : null);
+          width: MediaQuery.of(context).size.width / 2,
+          height: 10.0,
+          child: LabelText(
+            text: 'app_login_signin',
+            color: util.themeWhite,
+            bold: FontWeight.normal,
+            fontSize: util.kButtonTextFontSize,
+            isUpperCase: false,
+            maxFontSize: util.kMaxButtonTextFontSize,
+          ),
+          gradient: LinearGradient(
+            colors: [util.gradientColor1, util.gradientColor2],
+          ),
+        );
       },
     );
   }
@@ -156,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
         TextStyle(fontWeight: FontWeight.bold, color: Colors.white);
 
     return Container(
-        height: 15,
+        height: 15.0,
         width: double.infinity,
         child: Padding(
           padding: const EdgeInsets.only(left: 15.0),
