@@ -1,6 +1,5 @@
-import 'package:enablApp/src/models/menuitem_model.dart';
+import 'package:enablapp/src/models/menuitem_model.dart';
 import 'package:flutter/material.dart';
-
 
 List<MenuModel> menu = [
   new MenuModel(

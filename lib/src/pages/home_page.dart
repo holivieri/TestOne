@@ -1,6 +1,6 @@
-import 'package:enablApp/src/pages/collaborate_page.dart';
-import 'package:enablApp/src/pages/dashboard.dart';
-import 'package:enablApp/src/widgets/drawer.dart';
+import 'package:enablapp/src/pages/collaborate_page.dart';
+import 'package:enablapp/src/pages/dashboard.dart';
+import 'package:enablapp/src/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -31,10 +31,10 @@ class _Navegacion extends StatelessWidget {
         onTap: (i) => navegacionModel.paginaActual = i,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.pie_chart), title: Text('Dashboard')),
+              icon: Icon(Icons.pie_chart), label: 'Dashboard'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.message), title: Text('Collaborate')),
-          BottomNavigationBarItem(icon: Icon(Icons.menu), title: Text('Menu'))
+              icon: Icon(Icons.message), label: 'Collaborate'),
+          BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu')
         ]);
   }
 }

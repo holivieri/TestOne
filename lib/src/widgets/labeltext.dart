@@ -1,4 +1,4 @@
-import 'package:enablApp/src/localization/app_translation.dart';
+import 'package:enablapp/src/localization/app_translation.dart';
 import 'package:flutter/material.dart';
 
 class LabelText extends StatelessWidget {
@@ -26,7 +26,7 @@ class LabelText extends StatelessWidget {
           : AppTranslations.of(context).text(text),
       style: TextStyle(
         color: color,
-        fontWeight: (this.bold == null) ? FontWeight.normal : this.bold,
+        fontWeight: this.bold,
         fontSize: this.fontSize,
       ),
     )));

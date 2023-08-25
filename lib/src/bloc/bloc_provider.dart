@@ -1,4 +1,4 @@
-import 'package:enablApp/src/bloc/login_bloc.dart';
+import 'package:enablapp/src/bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 
 class BlocProvider extends InheritedWidget {

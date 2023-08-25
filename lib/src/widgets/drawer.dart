@@ -1,5 +1,5 @@
-import 'package:enablApp/src/data/sidemenu.dart';
-import 'package:enablApp/src/models/menuitem_model.dart';
+import 'package:enablapp/src/data/sidemenu.dart';
+import 'package:enablapp/src/models/menuitem_model.dart';
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 
@@ -24,11 +24,9 @@ Widget getDrawer(BuildContext context) {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Colors.blue[800],
-                Colors.blue[700],
-                Colors.blue[600],
-                Colors.blue[400],
-                Colors.blue[300],
+                Colors.blue,
+                Colors.lightBlue,
+                Colors.lightBlueAccent,
               ],
             ),
           ),
@@ -54,7 +52,9 @@ Widget getDrawer(BuildContext context) {
 }
 
 List<Widget> _buildSection(
-    {BuildContext context, String type, List<MenuModel> items}) {
+    {required BuildContext context,
+    required String type,
+    required List<MenuModel> items}) {
   return [
     Padding(
       padding: const EdgeInsets.only(

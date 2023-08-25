@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:enablApp/src/bloc/login_validator.dart';
+import 'package:enablapp/src/bloc/login_validator.dart';
 import 'package:rxdart/rxdart.dart';
 
 class LoginBloc with LoginValidator {
